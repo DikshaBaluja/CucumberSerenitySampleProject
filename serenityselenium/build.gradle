@@ -1,0 +1,43 @@
+repositories {
+    jcenter()
+    mavenLocal()
+}
+
+buildscript {
+    repositories {
+        mavenLocal()
+        jcenter()
+    }
+    dependencies {
+        classpath("net.serenity-bdd:serenity-gradle-plugin:2.0.81")
+    }
+}
+
+serenity {
+    reports = ["single-page-html"]
+}
+
+apply plugin: 'java'
+apply plugin: 'eclipse'
+apply plugin: 'idea'
+apply plugin: 'net.serenity-bdd.aggregator'
+
+sourceCompatibility = 14
+targetCompatibility = 14
+
+dependencies {
+    compile 'net.serenity-bdd:serenity-core:2.0.81'
+    compile 'net.serenity-bdd:serenity-cucumber:1.9.45'
+    testCompile('junit:junit:4.12')
+    compile('org.assertj:assertj-core:3.8.0')
+    testCompile 'net.serenity-bdd:serenity-core:2.0.81'
+    testCompile 'net.serenity-bdd:serenity-junit:2.2.9'
+    testCompile 'net.serenity-bdd:serenity-cucumber:1.9.45'
+}
+gradle.startParameter.continueOnFailure = true
+
+tasks.withType(Test) {
+    systemProperty 'webdriver.driver', System.getProperty('webdriver.driver', 'chrome')
+    systemProperty 'tags', System.getProperty('tags', '')
+}
+
