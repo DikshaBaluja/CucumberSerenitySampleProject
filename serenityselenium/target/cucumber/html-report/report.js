@@ -7,7 +7,12 @@ formatter.feature({
 formatter.scenario({
   "name": "Looking up the definition of \u0027apple\u0027",
   "description": "",
-  "keyword": "Scenario"
+  "keyword": "Scenario",
+  "tags": [
+    {
+      "name": "@Smoke"
+    }
+  ]
 });
 formatter.step({
   "name": "the user is on the Wikionary home page",

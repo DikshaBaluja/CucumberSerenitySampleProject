@@ -7,7 +7,7 @@ import net.thucydides.core.annotations.Step;
 public class EndUserSteps {
 
     WebActions actions;
-
+    
     @Step
     public void enterKeyword(String keyword) {
         actions._setValue(WebActions.elementLocators.get("SearchBox"),keyword);
@@ -24,4 +24,12 @@ public class EndUserSteps {
     public void HomePage() {
         actions.open();
     }
+    
+    @Step
+    public void checkLastRecord()
+    {
+    	
+    	
+    }
+    
 }

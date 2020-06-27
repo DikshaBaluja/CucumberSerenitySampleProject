@@ -16,7 +16,7 @@ public class DefinitionSteps {
     public void givenTheUserIsOnTheWikionaryHomePage() {
        steps.HomePage();
     }
-
+    
     @When("the user looks up the definition of the word '(.*)'")
     public void whenTheUserLooksUpTheDefinitionOf(String word) {
         steps.enterKeyword(word);
