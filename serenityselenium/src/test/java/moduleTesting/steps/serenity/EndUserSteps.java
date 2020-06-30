@@ -1,6 +1,8 @@
 package moduleTesting.steps.serenity;
 
 
+
+
 import moduleTesting.utilities.WebActions;
 import net.thucydides.core.annotations.Step;
 
@@ -17,6 +19,7 @@ public class EndUserSteps {
     public void looksUpDefinition()
     {
     	actions._javascriptClick(WebActions.elementLocators.get("SearchButton"));
+    	System.out.println();
     }
  
 
